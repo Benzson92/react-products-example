@@ -1,0 +1,13 @@
+.title, .description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.title {
+  -webkit-line-clamp: 2;
+}
+
+.description {
+  -webkit-line-clamp: 3;
+}
