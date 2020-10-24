@@ -1,5 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+On folder: src/features/products
+
+1. As a user, I can view product list.
+2. As a user, I can view product list with grid or list layout.
+3. As a user, I can click the button 'detail' on product item on the product list page to view product detail.
+4. As a user, when I hover on the product item, I can see animation.
+
+On folder: src/features/productId
+
+5. As a user, I can view product detail.
+6. As a user, I can see product id on url when I'm viewing product detail.
+
+On folder: src/features/counter
+
+7. As a user, I can decrease or increase product amount on product detail page.
+
 ## Available Scripts
 
 In the project directory, you can run:
