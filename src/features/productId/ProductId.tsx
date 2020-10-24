@@ -9,6 +9,7 @@ import { Counter } from '../counter/Counter';
 import {
   selectProduct,
   fetchProduct,
+  selectTextError,
 } from './productIdSlice';
 
 import styles from './ProductId.module.css';
@@ -19,11 +20,20 @@ interface MatchParams {
 
 export function ProductId({ match }: RouteComponentProps<MatchParams>) {
   const product = useSelector(selectProduct);
+  const textError = useSelector(selectTextError);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     dispatch(fetchProduct(match.params.id));
   }, [dispatch, match.params.id]);
+
+  if (textError) {
+    return (
+      <div>
+        { textError }
+      </div>
+    )
+  }
 
   return (
     <div>
