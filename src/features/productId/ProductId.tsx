@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { numberWithCommas } from '../../utils/numberWithCommas';
 
 import { Counter } from '../counter/Counter';
+import ProductIdButton from './components/ProductIdButton';
 
 import {
   selectProduct,
@@ -29,8 +30,19 @@ export function ProductId({ match }: RouteComponentProps<MatchParams>) {
 
   if (textError) {
     return (
-      <div>
-        { textError }
+      <div className="w-full text-center">
+        <div className="mb-4">
+          { textError }
+        </div>
+        <div>
+          <Link
+            to="/"
+          >
+            <ProductIdButton
+              label={ 'Back to Home' }
+            />
+          </Link>
+        </div>
       </div>
     )
   }
@@ -79,11 +91,9 @@ export function ProductId({ match }: RouteComponentProps<MatchParams>) {
             <Counter />
           </div>
           <div>
-            <button
-              className="text-white bg-primary py-1 px-4 text-center rounded"
-            >
-              Add to Cart
-            </button>
+            <ProductIdButton
+              label={ 'Add to Cart' }
+            />
           </div>
         </div>
       </div>
