@@ -19,18 +19,22 @@ const ProductGridItem: React.FC<Props> = (props) => {
         'transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl',
       ].join(' ') }
     >
-      <div
-        className={ [
-          styles.imageAspectRatio,
-          'w-full relative rounded-t',
-        ].join(' ') }
+      <Link
+        to={ `/${product._id}`}
       >
-        <img
-          src={ product.image_url }
-          alt={ product.name }
-          className="absolute w-full h-full object-cover rounded-t"
-        />
-      </div>
+        <div
+          className={ [
+            styles.imageAspectRatio,
+            'w-full relative rounded-t',
+          ].join(' ') }
+        >
+          <img
+            src={ product.image_url }
+            alt={ product.name }
+            className="absolute w-full h-full object-cover rounded-t"
+          />
+        </div>
+      </Link>
       <div className="w-full flex flex-col p-8">
         <div className="w-full flex items-center mb-4">
           <div className="mr-4 w-16 flex-shrink-0">
@@ -40,14 +44,18 @@ const ProductGridItem: React.FC<Props> = (props) => {
               className="w-full h-full object-cover rounded"
             />
           </div>
-          <div
-            className={ [
-              styles.title,
-              'font-bold',
-            ].join(' ') }
+          <Link
+            to={ `/${product._id}`}
           >
-            { product.name }
-          </div>
+            <div
+              className={ [
+                styles.title,
+                'font-bold',
+              ].join(' ') }
+            >
+              { product.name }
+            </div>
+          </Link>
         </div>
         <div
           className={ [

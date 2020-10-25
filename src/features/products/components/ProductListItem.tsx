@@ -20,22 +20,30 @@ const ProductListItem: React.FC<Props> = (props) => {
       ].join(' ') }
     >
       <div className="flex flex-row items-center pr-8">
-        <div className="mr-8 w-40 flex-shrink-0 border border-gray-300 rounded shadow-md">
-          <img
-            src={ product.image_url }
-            alt={ product.name }
-            className="w-full h-full object-cover rounded"
-          />
-        </div>
-        <div>
-          <div
-            className={ [
-              styles.title,
-              'mb-4 font-bold',
-            ].join(' ') }
-          >
-            { product.name }
+        <Link
+          to={ `/${product._id}`}
+        >
+          <div className="mr-8 w-40 flex-shrink-0 border border-gray-300 rounded shadow-md">
+            <img
+              src={ product.image_url }
+              alt={ product.name }
+              className="w-full h-full object-cover rounded"
+            />
           </div>
+        </Link>
+        <div>
+          <Link
+            to={ `/${product._id}`}
+          >
+            <div
+              className={ [
+                styles.title,
+                'mb-4 font-bold',
+              ].join(' ') }
+            >
+              { product.name }
+            </div>
+          </Link>
           <div
             className={ [
               styles.description,
