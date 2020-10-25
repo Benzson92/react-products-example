@@ -3,7 +3,7 @@ import { ProductDTO } from '../../../models/product/ProductDTO';
 
 export class ApiGetProducts {
   get() {
-    const url = `https://cc-mock-api.herokuapp.com/product`;
+    const url = `${process.env.REACT_APP_API_URL}/product`;
 
     return Axios.get<ProductDTO[]>(url);
   }
